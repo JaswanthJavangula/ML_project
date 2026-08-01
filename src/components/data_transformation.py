@@ -62,14 +62,14 @@ class DataTransformation:
             logging.info("read train and test data completed")
 
             logging.info("Obtaining preprocessing object")
-
+            #entire preprocessor of above will saved in preprocessor obj variable
             preprocessing_obj = self.get_data_transformation()
 
-            target_column_name = "math_score"
+            target_column_name = "math_score" #y
             numerical_columns = ["writing_score", "reading_score"]
 
     #features as X train
-            input_feature_train_df = train_df.drop(columns = [target_column_name])
+            input_feature_train_df = train_df.drop(columns = [target_column_name]) #dropped y
     #target as Y train
             target_feature_train_df = train_df[target_column_name]
     #features as X test
